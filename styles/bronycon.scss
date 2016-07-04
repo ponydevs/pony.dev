@@ -90,11 +90,28 @@ $icomoon-font-path: "../icons/fonts";
 
 // Custom styles go here
 
+.stamp {
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  transform: rotate(30deg);
+  height: 125px;
+  width: auto;
+  @include media-query(1000px) {
+    position: absolute;
+    top: 140px;
+  }
+  @include media-query($on-laptop) {
+    display: none;
+  }
+}
+
 #welcome {
   a { color: inherit; }
   background-image: url(/media/swag/bc16carpet.png);
   background-repeat: repeat;
-  background-size: initial;  
+  background-size: initial;
+  padding: 50px 0;
 }
 
 #about {
