@@ -1,0 +1,91 @@
+<section id="schedule">
+  <container style="max-width:750px;">
+    <!-- <row>
+      <column size="15"></column>
+      <column size="85">
+        <h1>{{ page.title }} Schedule</h1>
+      </column>
+    </row> -->
+    {% for item in page.schedule %}
+    {% capture thisPostDate %}{{ item.time | date_to_xmlschema | date: "%Y%m%d" }}{% endcapture %}
+    {% capture lastPostDate %}{% assign index = forloop.index0 | minus: 1 %}{% if page.schedule[index] %}{{ page.schedule[index].time | date_to_xmlschema | date: "%Y%m%d" }}{% endif %}{% endcapture %}
+    {% if thisPostDate != lastPostDate %}
+    <row class="schedule-day">
+      <column size="15" class="schedule-timeline"></column>
+      <column size="85" class="schedule-details">
+        <h1>{{ item.time | date_to_xmlschema | date: "%A %B %-d" }}</h1>
+      </column>
+    </row>
+    {% endif %}
+
+    <row class="schedule-event" id="{{ item.title | slugify }}">
+      <columny size="15" class="schedule-timeline schedule-event-time">
+        {{ item.time | date_to_xmlschema | date: "%-I:%M%P" }}
+      </columny>
+      <columny size="85" class="schedule-details">
+        <h2 class="schedule-event-title">
+          {{ item.title }}
+        </h2>
+        {% if item.author %}
+        <p class="schedule-event-author">{{ item.author }} <a href="https://twitter.com/{{ item.twitter }}" target="_blank">@{{ item.twitter }}</a></p>
+        {% endif %}
+        <p class="labels">
+        {% if item.location %}
+          <a class="label label-location label-location-{{ item.location | slugify }}" {% if item.address %} href="https://www.google.com/maps/search/{{ item.address }}" target="_blank" title="{{ item.address }}"{% else %}{% endif %}>
+            <icon class="icon-location"></icon>{{ item.location }}
+          </a>
+        {% endif %}
+        {% if item.price %}
+          <span class="label label-price label-price-{{ item.price | slugify }}">
+            <icon class="icon-cash"></icon>{{ item.price }}
+          </span>
+        {% endif %}
+        {% if item.warning %}
+          <span class="label label-warning label-warning-{{ item.warning | slugify }}">
+            <icon class="icon-post-alert"></icon>{{ item.warning }}
+          </span>
+        {% endif %}
+        </p>
+        {% if item.description %}
+        <p class="schedule-event-description">{{ item.description }}</p>
+        {% endif %}
+        {% if item.links %}
+        <p class="labels">
+          {% for link in item.links %}<a href="{{ link.url }}" target="_blank" title="{{ link.label }}" class="button">{% if link.icon %}<icon class="icon-{{ link.icon }}"></icon> {% endif %}{{ link.label }}</a>&nbsp;&nbsp;{% endfor %}
+        </p>
+        {% endif %}
+        {% if item.talks %}
+        <h5>TALKS</h5>
+          <div class="git-branch">
+          {% for talk in item.talks %}
+          <row class="schedule-talk">
+            <columnz class="schedule-talk-avatar">
+              {% if talk.avatar %}
+              <img src="{{ talk.avatar }}" alt="Profile picture of speaker">
+              {% else %}
+              <img src="/media/avatars/default.png" alt="Default silohouette of faceless speaker">
+              {% endif %}
+            </columnz>
+            <columnz>
+              <h3 class="schedule-talk-title no-margin-bottom" id="{{ talk.title | slugify }}">{{ talk.title }}</h3>
+              {% if talk.author %}<p class="no-margin-bottom">by {% if talk.authorurl %}<a href="{{ talk.authorurl }}" target="_blank">{{ talk.author }}</a>{% else %}{{ talk.author }}{% endif %}</p>{% endif %}
+              {% if talk.links %}
+                <p class="link-bar">
+                  <strong>Links:</strong>&nbsp;
+                  {% for link in talk.links %}{% if link.icon %}<icon class="icon-{{ link.icon }}"></icon> {% endif %}<a href="{{ link.url }}" target="_blank" title="{{ link.label }}" class="">{{ link.label }}</a>&nbsp;&nbsp;{% endfor %}
+                </p>
+              {% endif %}
+              {% if talk.embed %}
+                {{ talk.embed }}
+              {% endif %}
+            </columnz>
+          </row>
+          {% endfor %}
+          </div>
+        {% endif %}
+      </columny>
+    </row>
+    {% endfor %}
+
+  </container>
+</section>

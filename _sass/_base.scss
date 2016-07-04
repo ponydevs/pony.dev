@@ -23,7 +23,7 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  font-weight: normal;
+  font-weight: $base-font-weight;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   // margin: .15em 0;
   // font-weight: 700;
-  font-weight: bold;
+  font-weight: $heading-font-weight;
   line-height: 1em;
   color: inherit;
   a, a:hover {
@@ -109,13 +109,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .logo, .site-title {
   font-family: $title-font-family;
+  font-weight: $title-font-weight;
 }
 h1 {
   font-family: $title-font-family;
   font-size: 48px;
   line-height: 1.5em;
   // margin: 0.35em auto;
-  font-weight: 800;
+  font-weight: $title-font-weight;
 }
 h2 {
   font-size: 36px;
@@ -127,11 +128,19 @@ h3 {
   // margin: .5em auto;
   // font-weight: 700;
 }
+h4 {
+  font-size: 1.25em;
+}
+h5 {
+  text-transform: uppercase;
+  opacity: .5;
+  font-size: .85em;
+}
 
 // Links
 a {
   display: inline-block;
-  color: $brand-color;
+  color: $link-color;
   text-decoration: none;
   &:visited {
     // color: darken($brand-color, 15%);
@@ -144,13 +153,16 @@ a {
 
 // Paragraph
 .lead, p.lead {
-  font-size: 1.65em;
+  font-size: 1.25em;
   line-height: 1.5em;
-  font-family: $heading-font-family;
 }
 .leader, p.leader {
   margin-top: 1em;
   font-size: 2.5em;
+}
+.leader {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
 }
 
 // Blockquotes

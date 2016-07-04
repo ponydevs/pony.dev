@@ -5,14 +5,14 @@
 
   <!-- Page Title -->
   <title>{% if page.home %}{{ site.title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "/styles/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/styles/{% if page.style %}{{ page.style }}{% else %}bronycon{% endif %}.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ site.google-fonts }}&subset={{ site.google-fonts-subsets }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={% if page.google-fonts %}{{ page.google-fonts }}{% else %}{{ site.google-fonts }}{% endif %}&subset={% if page.google-fonts-subsets %}{{ page.google-fonts-subsets }}{% else %}{{ site.google-fonts-subsets }}{% endif %}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
   <meta name="keywords" content="{{ site.keywords }}">
-  <meta name="twitter:site" content="@{{ site.handle }}"/>
+  <meta name="twitter:site" content="@{{ site.twitter }}"/>
 
 </head>

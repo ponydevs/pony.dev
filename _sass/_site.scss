@@ -92,6 +92,11 @@ header {
   color: $white;
 }
 
+// Masthead
+.masthead {
+  padding: 120px 0;
+}
+
 // Link bar
 .link-bar {
   a:not(.twitter-button) {
@@ -102,6 +107,201 @@ header {
   }
   .twitter-button {
     margin-top: -2px;
+  }
+}
+
+// Schedule
+#schedule {
+  .schedule-timeline {
+    border-right: 16px solid $timeline-color;
+    padding: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 100;
+    @include media-query($on-laptop) {
+      background: lighten($timeline-color, 10%);
+      color: white;
+      font-weight: bold;
+      margin-bottom: 1em;
+      width: 100%;
+    }
+    @include media-query($on-palm) {
+      // margin-bottom: 0;
+      padding-left: 1em;
+    }
+  }
+  .schedule-day h1 {
+    border-bottom: 1px solid;
+  }
+  .schedule-details {
+    padding-left: 1.5em;
+    margin-bottom: 2em;
+  }
+  // Git inspired events
+  .git-branch {
+    border-left: 8px solid $timeline-color;
+    margin-left: -.5em;
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: -15px;
+      left: calc(-1em + -18px);
+      width: calc(1em + 21px);
+      height: 8px;
+      background: $timeline-color;
+      transform: rotate(45deg);
+    }
+    &:after {
+      content: ' ';
+      position: absolute;
+      bottom: -15px;
+      left: calc(-1em + -18px);
+      width: calc(1em + 21px);
+      height: 8px;
+      background: $timeline-color;
+      transform: rotate(-45deg);
+    }
+  }
+  .git-fork {
+    border-left: 8px solid $timeline-color;
+    margin-left: -.5em;
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: -15px;
+      left: calc(-1em + -18px);
+      width: calc(1em + 21px);
+      height: 8px;
+      background: $timeline-color;
+      transform: rotate(45deg);
+    }
+  }
+  .git-pull {
+    border-left: 8px solid $timeline-color;
+    margin-left: -.5em;
+    position: relative;
+    &:after {
+      content: ' ';
+      position: absolute;
+      bottom: -15px;
+      left: calc(-1em + -18px);
+      width: calc(1em + 21px);
+      height: 8px;
+      background: $timeline-color;
+      transform: rotate(-45deg);
+    }
+  }
+  h2.schedule-event-title {
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: -.25em;
+      left: calc(-1.5em + -4px);
+      background: white;
+      border: 8px solid $timeline-color;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      z-index: 200;
+      @include media-query($on-laptop) {
+        display: none;
+      }
+    }
+  }
+  h5 {
+    border-bottom: solid 2px;
+    margin: 0 0 2em 0;
+  }
+  .schedule-talk {
+    position: relative;
+    min-height: 100px;
+    @include media-query($on-palm) {
+      padding-left: 18px;
+    }
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: 28px;
+      left: -4px;
+      width: 18px;
+      height: 18px;
+      background: white;
+      display: block;
+      border-radius: 50%;
+      border: 6px solid $timeline-color;
+      @include media-query($on-palm) {
+        top: 0px;
+      }
+    }
+    .schedule-talk-avatar {
+      padding-left: 2em;
+      padding-right: 0;
+      margin: 0;
+      width: 120px;
+      flex-basis: 120px;
+      max-width: 120px;
+      img {
+        width: calc(120px - 2em);
+        height: calc(120px - 2em);
+        border-radius: 50%;
+      }
+      @include media-query($on-palm) {
+        display: none;
+      }
+    }
+    h3.schedule-talk-title {
+      // position: relative;
+      // margin-bottom: 0;
+      font-family: $base-font-family;
+      // display: inline-block;
+      font-size: 1.5em;
+      font-weight: bold;
+      @include media-query($on-laptop) {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.labels {
+  @include media-query($on-palm) {
+    text-align: center;
+  }
+}
+.label {
+  display: inline-block;
+  background: $white;
+  border: 1px solid $timeline-color;
+  padding: 0;
+  border-radius: 4px;
+  padding-right: .35em;
+  margin-right: .25em;
+  icon, span {
+    display: inline-block;
+    background: $timeline-color;
+    height: 1.68em;
+    vertical-align: top;
+    padding: .25em;
+    color: $white;
+    margin-right: .35em;
+  }
+}
+
+// Footer
+.site-footer {
+
+}
+.center-footer {
+  background: $primary;
+  color: $white;
+  a {
+    color: $white;
+  }
+  .button.back-to-top {
+    margin-bottom: 2em;
   }
 }
 

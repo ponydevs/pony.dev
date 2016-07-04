@@ -1,0 +1,134 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import variables from `sass_dir` (defaults to `_sass`)
+@import
+  "bronycon"
+;
+
+// Our variables
+$base-font-family:    $bc-body-font-family, Georgia, Arial, sans-serif;
+$base-font-size:      18px;
+$base-line-height:    1.65;
+$base-font-weight:    normal;
+
+$title-font-family:   $bc-title-font-family, Helvetica, Arial, sans-serif;
+$title-font-weight:   $bc-title-font-weight;
+
+$heading-font-family: $bc-heading-font-family, Helvetica, Arial, sans-serif;
+$heading-font-weight: $bc-heading-font-weight;
+
+$accent-font-family:  $bc-monospace-font-family, $base-font-family;
+$accent-font-weight:  $bc-monospace-font-weight;
+
+$small-font-size:     $base-font-size * 0.875;
+
+$spacing-unit:      30px;
+
+// Max width of the content area
+// 1160px for medium, 960px for small
+$content-width:     780px;
+
+$on-palm:           600px;
+$on-laptop:         700px;
+
+$border-radius:     4px;
+
+// Color pallete
+$primary:           $bc-violet;
+$primary-lighter:   lighten($primary, 15%);
+$primary-darker:    darken($primary, 15%);;
+$secondary:         $bc-orange;
+$secondary-lighter: lighten($secondary, 15%);
+$secondary-darker:  darken($secondary, 15%);
+
+$alert:             $bc-green;
+$white:             #ffffff;
+$black:             $bc-blue;
+
+$grey:              #828282;
+$grey-light:        lighten($grey, 40%);
+$grey-dark:         darken($grey, 25%);
+
+$text-color:        $black;
+$background-color:  #FAFAFA;
+$brand-color:       $primary;
+$link-color:        $bc-magenta;
+$button-background: $secondary;
+$button-color:      $white;
+$timeline-color:    $secondary;
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//  .wrapper {
+//    padding-right: $spacing-unit / 2;
+//    padding-left: $spacing-unit / 2;
+//  }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// Font location
+$icomoon-font-path: "../icons/fonts";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "base",
+  "grid",
+  "forms",
+  "iconsvars",
+  "icons",
+  "site",
+  "font-museo",
+  "font-proxima"
+;
+
+// Custom styles go here
+
+#welcome {
+  a { color: inherit; }
+}
+
+#about {
+  background: $bc-orange;
+  color: white;
+  a { color: inherit; }
+  .button {
+    background: $white;
+    color: $bc-orange!important;
+    &:hover {
+      background: darken($white, 5%);
+    }
+  }
+}
+
+#schedule {
+  padding: 0!important;
+}
+
+#schedule .schedule-day h1 {
+  color: $bc-cyan;
+  border-bottom: 2px solid;
+}
+
+#schedule .schedule-day:first-of-type h1 {
+  margin-top: .75em;
+}
+
+#connect {
+  background: $bc-azure;
+  color: $white;
+}
+
+#future {
+  background: $background-color;
+  img {
+    max-height: 150px;
+    width: auto;
+  }
+}

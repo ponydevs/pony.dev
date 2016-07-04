@@ -1,13 +1,13 @@
 // Buttons
 .button {
-  background: $secondary;
-  color: white!important;
+  background: $button-background;
+  color: $button-color!important;
   display: inline-block;
   font-family: $base-font-family;
   font-size: $base-font-size;
   padding: .5em 1em;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: $border-radius;
   font-weight: bold;
   -webkit-user-select: none;
   margin-bottom: $base-font-size;
@@ -21,7 +21,7 @@
     }
   }
   &:hover, &:focus, &:active {
-    background: darken($secondary, 10%);
+    background: darken($button-background, 10%);
     text-decoration: none;
   }
   &:active {
@@ -38,7 +38,7 @@ form {
   max-width: 700px;
   margin: auto;
   color: $black;
-  background: white;
+  background: $white;
   // border: 1px dotted $black;
   padding: $spacing-unit / 2;
   &>label, &>ol>label, .label, .ss-form-entry {
@@ -76,7 +76,7 @@ form {
       // Outline for accessibility reasons
       outline: 2px solid $black;
       &:invalid {
-        outline: 2px solid $red;
+        outline: 2px solid $alert;
       }
     }
     &:valid {
@@ -89,7 +89,7 @@ form {
       // border-bottom-color: $grey;
     }
     &[required]:invalid {
-      border-bottom-color: $red;
+      border-bottom-color: $alert;
     }
   }
   input[type=submit], button, .button {
@@ -106,13 +106,13 @@ form {
   }
   span.required:after {
     content: '*';
-    color: $red;
+    color: $alert;
     position: relative;
     margin-left: 2px;
     margin-right: -9px;
   }
   .ss-required-asterisk {
-    color: $red;
+    color: $alert;
     margin-left: 2px;
     margin-right: -9px;
     position: absolute;
