@@ -5,7 +5,7 @@
 
   <!-- Page Title -->
   <title>{% if page.home %}{{ site.title }}{% elsif page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{% endif %}">
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
 
   <link rel="stylesheet" href="{{ site.baseurl }}/styles/{% if page.style %}{{ page.style }}{% else %}bronycon{% endif %}.css">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
