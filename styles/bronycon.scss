@@ -143,6 +143,7 @@ $icomoon-font-path: "../icons/fonts";
 #connect {
   background: $bc-azure;
   color: $white;
+  a { color: inherit; }
 }
 
 #future {
