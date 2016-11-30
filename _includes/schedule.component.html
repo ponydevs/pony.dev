@@ -54,6 +54,7 @@
           {% for link in item.links %}<a href="{{ link.url }}" target="_blank" title="{{ link.label }}" class="button">{% if link.icon %}<icon class="icon-{{ link.icon }}"></icon> {% endif %}{{ link.label }}</a>&nbsp;&nbsp;{% endfor %}
         </p>
         {% endif %}
+        {% if item.embed %}{{ item.embed }}{% endif %}
         {% if item.talks %}
         <h5>TALKS</h5>
           <div class="git-branch">
