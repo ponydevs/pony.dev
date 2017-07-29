@@ -1,6 +1,6 @@
 // Navigation
 #navigation {
-  background: $primary-darker;
+  background: $primary;
   color: $white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.25);
 
@@ -18,7 +18,7 @@
   .site-title {
     // font-size: 26px;
     font-size: 36px;
-    line-height: 56px;
+    line-height: 48px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
@@ -91,6 +91,7 @@
   }
 }
 
+// Fancy nav styling
 #navigation {
   transform: rotate(-3deg); // translateX(-16px);
   margin-top: -310px;
@@ -98,6 +99,8 @@
   position: absolute;
   width: $content-width - ($spacing-unit*2);
   margin-left: -$spacing-unit - 4px;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   // padding-top: 330px;
   padding: 330px ($spacing-unit + 4px) 0;
   @include media-query($on-palm) {
@@ -329,7 +332,7 @@ header {
   }
 }
 .center-footer {
-  background: $primary;
+  background: $black;
   color: $white;
   a {
     color: $white;
