@@ -12,21 +12,24 @@
 
   a {
     color: $white;
+    padding: 0 .5rem;
   }
 
   .site-title {
-    font-size: 26px;
+    // font-size: 26px;
+    font-size: 36px;
     line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    margin-right: 1rem;
 
     &, &:visited {
       // color: $grey-dark;
     }
   }
   .site-nav {
-    float: right;
+    // float: right;
     line-height: 56px;
 
     .menu-icon {
@@ -36,6 +39,8 @@
     .page-link {
       // color: $text-color;
       line-height: $base-line-height;
+
+      font-size: 24px;
 
       // Gaps between nav items, but not on the first one
       &:not(:first-child) {
@@ -84,6 +89,31 @@
       }
     }
   }
+}
+
+#navigation {
+  transform: rotate(-3deg); // translateX(-16px);
+  margin-top: -310px;
+  margin-bottom: -70px;
+  position: absolute;
+  width: $content-width - ($spacing-unit*2);
+  margin-left: -$spacing-unit - 4px;
+  // padding-top: 330px;
+  padding: 330px ($spacing-unit + 4px) 0;
+  @include media-query($on-palm) {
+    transform: none;
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 100%;
+    position: relative;
+  }
+}
+
+// Sections adjust to navigation
+.first-hill {
+  padding-top: 130px;
 }
 
 // Page header
@@ -292,7 +322,11 @@ header {
 
 // Footer
 .site-footer {
-
+  hr {
+    border: 2px solid rgba(0,0,0,.25);
+    margin: 1em auto;
+    width: 50%;
+  }
 }
 .center-footer {
   background: $primary;
@@ -306,21 +340,33 @@ header {
 }
 
 // 404
-#four-oh-four {
+#four-oh-four, .four-oh-four-lookalike {
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   background: $secondary;
   color: white;
 
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
-  h1 {
+  h1:first-of-type {
     margin-top: 1em;
   }
   a {
     color: white;
+  }
+}
+
+// Join CTA page
+#join {
+  background: black;
+  weak {
+    font-weight: normal;
+    display: inline-block;
+  }
+  .alt {
+    font-family: $base-font-family;
   }
 }
 

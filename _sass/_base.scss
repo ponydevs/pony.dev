@@ -34,6 +34,7 @@ body {
   text-align: left;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 ::selection {
   background: lighten($brand-color, 25%);
