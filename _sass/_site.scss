@@ -39,7 +39,6 @@
     .page-link {
       // color: $text-color;
       line-height: $base-line-height;
-
       font-size: 24px;
 
       // Gaps between nav items, but not on the first one
@@ -363,7 +362,9 @@ header {
 
 // Join CTA page
 #join {
-  background: black;
+  background-color: black;
+  background-image: url(/cover.png);
+  background-size: cover;
   weak {
     font-weight: normal;
     display: inline-block;
