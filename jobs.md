@@ -1,5 +1,5 @@
 ---
-layout: blank
+layout: page
 permalink: /jobs
 style: ponydev
 title: "#ponydev jobs"
