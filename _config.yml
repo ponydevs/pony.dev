@@ -1,6 +1,6 @@
 # Site settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://developer.horse/" # the base hostname & protocol for your site
+url: "http://pony.dev/" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -18,7 +18,7 @@ google-analytics: "UA-48655154-2"
 
 # Commonly used lingo
 title: "#ponydev"
-email: victor@poniverse.net
+email: 
 description: > # this means to ignore newlines until the next colon
   Come join us!
 twitter: pixelyunicorn
