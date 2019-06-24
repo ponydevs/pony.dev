@@ -9,6 +9,8 @@
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% endif %}">
 
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
   <link rel="stylesheet" href="{{ site.baseurl }}/styles/{% if page.style %}{{ page.style }}{% else %}bronycon{% endif %}.css?cb=2g">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={% if page.google-fonts %}{{ page.google-fonts }}{% else %}{{ site.google-fonts }}{% endif %}&subset={% if page.google-fonts-subsets %}{{ page.google-fonts-subsets }}{% else %}{{ site.google-fonts-subsets }}{% endif %}">
