@@ -1,4 +1,4 @@
-# http://Developer.Horse
+# https://pony.dev
 
 Built with Jekyll (for now) and hosted on GitHub Pages (for now).
 
