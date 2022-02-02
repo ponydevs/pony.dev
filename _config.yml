@@ -9,6 +9,7 @@ gems:
    - jekyll-redirect-from
 future: true
 timezone: Etc/UTC
+include: [".well-known"]
 
 # Metadata
 keywords: "brony, my little pony, horse, pony devs, meetup, philadelphia, baltimore, seattle, talks, developer, panel, meetup.com"
